@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="784.0" prefWidth="1068.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar prefHeight="0.0" prefWidth="893.0" stylesheets="@../css/sytle.css" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="588.0" prefWidth="877.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Button id="btnopen" layoutX="21.0" layoutY="64.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="155.0" text="통신포트열기" />
+            <Button id="button_scan" layoutX="218.0" layoutY="15.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="166.0" text="스위치, 개폐기 검색">
+               <font>
+                  <Font name="NanumSquareRound Regular" size="12.0" />
+               </font></Button>
+            <Label id="label_nodeinfo" layoutX="412.0" layoutY="27.0" prefHeight="105.0" prefWidth="570.0" text="..." />
+            <Label id="label_scan" layoutX="218.0" layoutY="66.0" prefHeight="14.0" prefWidth="166.0" text="..." />
+            <ComboBox id="comboportList" layoutX="23.0" layoutY="25.0" prefWidth="150.0" />
+            <ScrollPane id="sclPaneSwitch" layoutX="21.0" layoutY="163.0" prefHeight="285.0" prefWidth="800.0">
+               <content>
+                  <FlowPane id="flwPanSwitch" hgap="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="785.0" vgap="4.0" />
+               </content>
+            </ScrollPane>
+            <Pane id="paneSwitchControl" layoutX="831.0" layoutY="163.0" prefHeight="285.0" prefWidth="223.0">
+               <children>
+                  <AnchorPane layoutX="1.0" layoutY="3.0" minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="221.0">
+                     <children>
+                        <RadioButton id="rbtnSwtCtrl1" layoutX="30.0" layoutY="78.0" mnemonicParsing="false" text="일반제어">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="RadioButtonSwitch" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton id="rbtnSwtCtrl2" layoutX="30.0" layoutY="125.0" mnemonicParsing="false" text="시간제어 (초)" toggleGroup="$RadioButtonSwitch">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </RadioButton>
+                        <Button id="btnSwtOn" layoutX="55.0" layoutY="198.0" mnemonicParsing="false" text="켜기">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button id="btnSwtOff" layoutX="129.0" layoutY="198.0" mnemonicParsing="false" text="끄기">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </Button>
+                        <TextField id="txtAreaSwtTime" layoutX="135.0" layoutY="123.0" prefHeight="23.0" prefWidth="76.0" />
+                        <Label id="lblSelectedSwitch" alignment="TOP_CENTER" layoutX="1.0" layoutY="14.0" prefHeight="15.0" prefWidth="221.0" text="선택된 스위치" textAlignment="CENTER" />
+                        <Label id="lblSelectedSwitch1" alignment="TOP_CENTER" layoutX="1.0" layoutY="29.0" prefHeight="15.0" prefWidth="221.0" text="스위치를 선택해주세요." />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <ScrollPane id="sclPaneReactable" layoutX="21.0" layoutY="460.0" prefHeight="285.0" prefWidth="800.0">
+               <content>
+                  <FlowPane id="flwPanReactable" hgap="4.0" prefHeight="283.0" prefWidth="798.0" vgap="4.0" />
+               </content>
+            </ScrollPane>
+            <Pane id="paneReactableControl" layoutX="831.0" layoutY="460.0" prefHeight="285.0" prefWidth="223.0">
+               <children>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="221.0">
+                     <children>
+                        <RadioButton id="rbtnReactCtrl1" layoutX="32.0" layoutY="77.0" mnemonicParsing="false" text="일반제어">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="RadioButtonReact" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton id="rbtnReactCtrl2" layoutX="31.0" layoutY="110.0" mnemonicParsing="false" text="시간제어 (초)" toggleGroup="$RadioButtonReact">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </RadioButton>
+                        <TextArea id="txtAreaReactTime" layoutX="155.0" layoutY="111.0" prefHeight="56.0" prefWidth="58.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextArea>
+                        <Button id="btnReactOpen" layoutX="31.0" layoutY="233.0" mnemonicParsing="false" text="열기">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button id="btnReactClose" layoutX="152.0" layoutY="233.0" mnemonicParsing="false" text="닫기">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button id="btnReactStop" layoutX="91.0" layoutY="233.0" mnemonicParsing="false" text="중지">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </Button>
+                        <RadioButton id="rbtnReactCtrl3" layoutX="30.0" layoutY="144.0" mnemonicParsing="false" text="개방도제어 (%)" toggleGroup="$RadioButtonReact">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton id="rbtnReactCtrl4" layoutX="30.0" layoutY="174.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="155.0" text="열기,닫기 초기 설정값" toggleGroup="$RadioButtonReact">
+                           <font>
+                              <Font name="NanumMyeongjo YetHangul" size="13.0" />
+                           </font>
+                        </RadioButton>
+                        <Label id="lblSelectedReactable" alignment="TOP_CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="15.0" prefWidth="221.0" text="선택된 개폐기" textAlignment="CENTER" />
+                        <Label id="lblSelectedReactable1" alignment="TOP_CENTER" layoutX="3.0" layoutY="29.0" prefHeight="15.0" prefWidth="215.0" text="개폐기를 선택해주세요." textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Button id="button_device" layoutX="218.0" layoutY="95.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="166.0" text="장치(센서)검색" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
