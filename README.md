@@ -15,3 +15,5 @@ actest1.jar파일을 다운로드 받고 windows의 명령 프롬프트 창에�
 java --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml -jar actest1.jar
 (%PATH_TO_FX%는 javaFX의 lib 경로임.)
 코드를 실행시킨다.
+
+kbm 내용수정
