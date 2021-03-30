@@ -19,5 +19,7 @@ java --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml -jar a
 kbm 내용수정
 
 추가 20210330
-추가 20210330
+
+#Screenshot
+![](java_actuatornode.png)
 
