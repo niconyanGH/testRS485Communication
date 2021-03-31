@@ -14,7 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import ksxsdk. *;
-
+// 주석
 public class App extends Application {
 
     public ComboBox cbportList;
